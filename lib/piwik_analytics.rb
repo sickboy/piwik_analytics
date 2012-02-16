@@ -79,3 +79,6 @@ module PiwikAnalytics
     end
   end
 end
+
+ActionController::Base.send :include, PiwikAnalytics::PiwikAnalyticsMixin
+ActionController::Base.send :after_filter, :add_piwik_analytics_tracking
