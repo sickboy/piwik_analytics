@@ -47,9 +47,9 @@ module PiwikAnalytics
     def add_piwik_analytics_tracking
       if Config.enabled? request.format
         if Config.use_async
-          self.response.body= response.body.sub /<\/head>/, "#{piwik_tracking_js}</head>" if response.body.respond_to?(:sub!)
+          self.response.body = response.body.sub /<\/head>/i, "#{piwik_tracking_js}</head>" if response.body.respond_to?(:sub!)
         else
-          self.response.body= response.body.sub! /<\/body>/i, "#{piwik_tracking_js}</body>" if response.body.respond_to?(:sub!)
+          self.response.body = response.body.sub! /<\/body>/i, "#{piwik_tracking_js}</body>" if response.body.respond_to?(:sub!)
         end
       end
     end
