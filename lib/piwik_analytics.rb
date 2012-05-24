@@ -39,6 +39,7 @@ module PiwikAnalytics
                 piwikTracker.enableLinkTracking();
         } catch( err ) {}
         </script>
+        <noscript><p><img src="http://#{Config.url}piwik.php?idsite=#{Config.id_site}" style="border:0" alt="" /></p></noscript>
         <!-- End Piwik Tag -->
         code
       end
